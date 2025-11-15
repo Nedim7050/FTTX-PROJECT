@@ -179,12 +179,18 @@ Pour toute question, suggestion ou problème :
 - Créez une issue sur [GitHub](https://github.com/Nedim7050/FTTX-PROJECT/issues)
 - Contactez l'équipe de développement du Centre Urbain Nord
 
+## 👨‍💻 Auteur
+
+**Nedim Mejri**
+
+Développeur de l'application FTTX-PROJECT pour le Centre Urbain Nord de Tunis - Tunisie Télécom.
+
 ## 📄 Licence
 
 Ce projet est la propriété exclusive de **Tunisie Télécom** et est destiné à un usage interne.
 
 ---
 
-**Développé avec ❤️ pour le Centre Urbain Nord de Tunis - Tunisie Télécom**
+**Développé avec ❤️ par Nedim Mejri pour le Centre Urbain Nord de Tunis - Tunisie Télécom**
 
 © 2024 Tunisie Télécom. Tous droits réservés.
