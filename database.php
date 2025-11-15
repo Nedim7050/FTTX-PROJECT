@@ -24,8 +24,23 @@ $password = $_ENV['DB_PASSWORD'] ?? $_SERVER['DB_PASSWORD'] ?? getenv('DB_PASSWO
 $port = $_ENV['DB_PORT'] ?? $_SERVER['DB_PORT'] ?? getenv('DB_PORT') ?: '3306';
 
 try {
-    // Initialisation de la connexion avec le charset UTF-8
-    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
+    // Détecter le type de base de données à partir du port ou d'une variable d'environnement
+    $db_type = $_ENV['DB_TYPE'] ?? $_SERVER['DB_TYPE'] ?? getenv('DB_TYPE') ?: 'mysql';
+    
+    // Si le port est 5432, c'est PostgreSQL, sinon MySQL par défaut
+    if ($port == '5432' || $port == 5432) {
+        $db_type = 'pgsql';
+    }
+    
+    // Construire le DSN selon le type de base de données
+    if ($db_type === 'pgsql' || $db_type === 'postgresql') {
+        // PostgreSQL
+        $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
+    } else {
+        // MySQL (par défaut)
+        $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
+    }
+    
     $conn = new PDO($dsn, $username, $password);
     
     // Configuration de PDO pour lever une exception en cas d'erreur
