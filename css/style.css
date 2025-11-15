@@ -1,0 +1,56 @@
+/* Styles personnalisés */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    background-color: #f8f9fa;
+    padding: 100px 0;
+    position: relative; /* Positionnement pour le pseudo-élément flou */
+    color: #333;
+    overflow: hidden; /* Empêche le débordement du flou */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../uploads/background 5.png'); /* Chemin vers l'image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px); /* Flou appliqué uniquement à l'image */
+    z-index: 1;
+}
+
+/* Conteneur pour le contenu texte de `.hero` */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Place le texte au-dessus de l'image floue */
+    color: #fff; /* Couleur du texte en blanc */
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+.features h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    margin-top: 50px;
+    padding: 20px 0;
+    color: #6c757d;
+}

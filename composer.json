@@ -1,0 +1,16 @@
+{
+    "name": "tunisie-telecom/fttx-project",
+    "description": "Application web de suivi du marché FTTx",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {},
+    "scripts": {
+        "post-install-cmd": []
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
+

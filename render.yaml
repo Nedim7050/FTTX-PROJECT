@@ -1,0 +1,32 @@
+# Configuration Render.com pour déploiement automatique
+# Ce fichier permet de configurer tous vos services en une seule fois
+
+services:
+  # Service Web PHP
+  - type: web
+    name: fttx-project
+    runtime: php
+    plan: free
+    buildCommand: ""
+    startCommand: php -S 0.0.0.0:$PORT
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DB_HOST
+        sync: false  # À configurer manuellement dans le dashboard
+      - key: DB_PORT
+        value: 3306
+      - key: DB_NAME
+        sync: false  # À configurer manuellement dans le dashboard
+      - key: DB_USER
+        sync: false  # À configurer manuellement dans le dashboard
+      - key: DB_PASSWORD
+        sync: false  # À configurer manuellement dans le dashboard
+
+databases:
+  # Base de données MySQL
+  - name: fttx-database
+    plan: free
+    databaseName: fttx_project
+    user: fttx_user
+
